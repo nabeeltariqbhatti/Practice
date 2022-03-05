@@ -17,13 +17,15 @@ public class PrimeMain {
         number = scanner.nextInt();
         int c = 2;
 
-        while (c<=number){
+        while (c+c<=number){
             if(number%c==0){
-                System.out.println("prime");
+                System.out.println(" not prime");
+                System.exit(-1);
             }
             c++;
 
         }
+        System.out.println("prime");
     }
 
 
