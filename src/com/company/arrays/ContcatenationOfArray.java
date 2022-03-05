@@ -6,7 +6,7 @@ package com.company.arrays;
  * @Time at 12:24 AM
  */
 public class ContcatenationOfArray {
-    public  static int[] getConcatenation(int[] nums) {
+    private  static int[] getConcatenation(int[] nums) {
         int[] ans = new int[nums.length*2];
 
         for(int i=0; i<nums.length; i++){

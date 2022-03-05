@@ -6,7 +6,7 @@ package com.company.arrays;
  * @Time at 12:10 AM
  */
 public class BuildArrayFromPermutation {
-    public static  int[] buildArray(int[] nums) {
+    private static  int[] buildArray(int[] nums) {
 
         int[] ans = new int[nums.length];
 
