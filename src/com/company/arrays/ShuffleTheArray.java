@@ -20,5 +20,7 @@ public class ShuffleTheArray {
     }
     public static void main(String[] args) {
 
+
+        System.out.println(Integer.compare(10,20));
     }
 }
