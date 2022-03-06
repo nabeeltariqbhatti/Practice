@@ -9,6 +9,9 @@ import java.util.Arrays;
  */
 public class OrderAgnosticBinarySearch {
     public static int binarySearch(int[] array, int l, int r,int target){
+        //can also be done using this flag but then code will increase but easy to understand
+//        boolean ascFlag = array[l] < array[r];
+
         int mid = l+(r-l)/2;
         if(array[mid] == target ){
             return mid;
