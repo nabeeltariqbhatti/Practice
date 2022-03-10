@@ -13,14 +13,22 @@ public class Consumer extends  Thread{
 
     @Override
     public void run() {
-        while (true){
-            synchronized (Main.bucket){
-                if(!Main.bucket.isEmpty()){
-                    int n = Main.bucket.get(0);
-                    Main.bucket.remove(0);
-                    System.out.println("thread " + Thread.currentThread().getName() + " took value from bucket");
+        try{
+
+            while (true){
+                synchronized (Main.bucket){
+                    if(!Main.bucket.isEmpty()){
+                        int n = Main.bucket.get(0);
+                        Main.bucket.remove(0);
+                        Main.bucket.notifyAll();
+                        System.out.println("thread " + Thread.currentThread().getName() + " took value from bucket");
+                    }else {
+                        Main.bucket.wait();
+                    }
                 }
+
             }
+        }catch (Exception exception){
 
         }
     }

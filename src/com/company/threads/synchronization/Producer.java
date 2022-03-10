@@ -14,16 +14,23 @@ public class Producer extends Thread{
     }
     @Override
     public void run() {
-        Random random = new Random();
-        while(true){
-            synchronized (Main.bucket){//decide which is our monitor
-                if(Main.bucket.size()<100){
-                    int n =random.nextInt(1000);
-                    Main.bucket.add(n);
-                    System.out.println("thread " +  Thread.currentThread().getName() + " value added is " + n );
-                }
-            }
+       try{
+           Random random = new Random();
+           while(true){
+               synchronized (Main.bucket){//decide which is our monitor
+                   if(Main.bucket.size()<100){
+                       int n =random.nextInt(1000);
+                       Main.bucket.add(n);
+                       System.out.println("thread " +  Thread.currentThread().getName() + " value added is " + n );
+                   }else{
+                       Main.bucket.wait();
+                   }
+               }
 
-        }
+           }
+       }catch (Exception exception){
+           System.out.println("exception ");
+       }
+
     }
 }
