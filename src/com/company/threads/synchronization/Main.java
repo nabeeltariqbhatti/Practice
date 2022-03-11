@@ -22,5 +22,19 @@ public class Main {
         p2.start();
         c2.start();
         c3.start();
+        A a = new A();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                a.m1();
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                a.m2();
+            }
+        }).start();
     }
 }
