@@ -17,4 +17,10 @@ public class A {
             System.out.println("B");
 
     }
+
+    public static void classy(){
+        synchronized (A.class){
+
+        }
+    }
 }
