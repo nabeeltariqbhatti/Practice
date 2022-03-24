@@ -22,6 +22,8 @@ public class ReadFromFile {
 
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("file2.txt"));
         bufferedWriter.write("hello how are you 2");
+        bufferedWriter.newLine();
+        bufferedWriter.write("bye bye nigga");
 
         BufferedReader bufferedReader = new BufferedReader(new FileReader("file.txt"));
 
