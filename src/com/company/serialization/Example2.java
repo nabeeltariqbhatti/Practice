@@ -13,8 +13,8 @@ public class Example2 {
         try(FileInputStream fileInputStream = new FileInputStream("cat1.txt"); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)){
 
             Cat cat2 = (Cat)objectInputStream.readObject();
-            System.out.println(cat2.getName());
-        }catch (Exception e){
+            System.out.println(cat2);
+        }catch (IOException  | ClassNotFoundException e){
             e.printStackTrace();
         }
     }

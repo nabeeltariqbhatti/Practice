@@ -10,28 +10,20 @@ import java.io.*;
 public class Example {
     public static void main(String[] args) {
 
-        Cat cat = new Cat("cato");
+        Dog dog =  new Dog("hito", 12);
 
 
         //serialization
         //try with resources starts with java 7
-        try(FileOutputStream fileOutputStream = new FileOutputStream("cat1.txt");
+        try(FileOutputStream fileOutputStream = new FileOutputStream("dog.txt");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
 
-            objectOutputStream.writeObject(cat);
+            objectOutputStream.writeObject(dog);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //deserialize object
-        try(FileInputStream fileInputStream = new FileInputStream("cat1.txt"); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)){
-
-            Cat cat2 = (Cat)objectInputStream.readObject();
-            System.out.println(cat2.getName());
-        }catch (Exception e){
-            e.printStackTrace();
-        }
     }
 }
