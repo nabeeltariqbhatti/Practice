@@ -8,7 +8,9 @@ import java.io.Serializable;
  * @Time at 2:29 PM
  */
 public class Cat implements  Serializable{
+private static  final long serialVesionUID = 1L;
     private String name;
+   private String color;
     public Cat(){}
 
     public Cat(String name) {

@@ -12,13 +12,13 @@ public class Example {
 
         Dog dog =  new Dog("hito", 12);
 
-
+          Cat cat = new Cat("hellow");
         //serialization
         //try with resources starts with java 7
-        try(FileOutputStream fileOutputStream = new FileOutputStream("dog.txt");
+        try(FileOutputStream fileOutputStream = new FileOutputStream("cat.txt");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
 
-            objectOutputStream.writeObject(dog);
+            objectOutputStream.writeObject(cat);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

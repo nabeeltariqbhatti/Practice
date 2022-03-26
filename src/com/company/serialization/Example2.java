@@ -10,7 +10,7 @@ import java.io.*;
 public class Example2 {
     public static void main(String[] args) {
         //deserialize object
-        try(FileInputStream fileInputStream = new FileInputStream("cat1.txt"); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)){
+        try(FileInputStream fileInputStream = new FileInputStream("cat.txt"); ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)){
 
             Cat cat2 = (Cat)objectInputStream.readObject();
             System.out.println(cat2);
