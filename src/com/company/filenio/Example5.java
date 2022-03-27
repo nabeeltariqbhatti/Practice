@@ -24,6 +24,7 @@ public class Example5 {
 
         System.out.println(path.resolve(Paths.get("/d/e"))); //only second path will remain
 
+        System.out.println(path2.getFileSystem());
 
     }
 }
