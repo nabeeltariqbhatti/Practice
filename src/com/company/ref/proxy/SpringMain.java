@@ -31,9 +31,8 @@ public class SpringMain {
             calculatorAspect  = declaredConstructor.newInstance();
 
         }
-        SpringInvocationHnadler invocationHnadler;
         if(c.isAnnotationPresent(Aspect.class)){
-           calculator =  Proxy.newProxyInstance(SpringMain.class.getClassLoader(), new Class[]{c1},new SpringInvocationHnadler(calculator,calculatorAspect) );
+           calculator =  Proxy.newProxyInstance(SpringMain.class.getClassLoader(), new Class[]{CalcultorService.class},new SpringInvocationHnadler(calculatorAspect) );
         }
         CalcultorService calculator1 = (Calculator) calculator;
         System.out.println(calculator1.sum(1, 3));

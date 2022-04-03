@@ -14,18 +14,18 @@ import java.lang.reflect.Method;
 public class SpringInvocationHnadler implements InvocationHandler {
 
     private final  Object aspect;
-    private final Object bean;
 
-    public SpringInvocationHnadler(Object aspect, Object bean) {
+
+    public SpringInvocationHnadler(Object aspect) {
         this.aspect = aspect;
-        this.bean = bean;
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Class<?> c1 = Class.forName("com.company.ref.proxy.CalculatorAspect");
+        Class<?> c1 = aspect.getClass();
         Method[] declaredMethods = c1.getDeclaredMethods();
         for (Method declaredMethod : declaredMethods) {
+            System.out.println(declaredMethod.getName());
             if(declaredMethod.isAnnotationPresent(Aspect.class)){
                 System.out.println(declaredMethod.getName());
                 System.out.println(declaredMethod.invoke(c1.getDeclaredConstructor().newInstance(), CalcultorService.class));
