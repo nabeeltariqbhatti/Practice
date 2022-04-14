@@ -10,6 +10,10 @@ import java.util.Arrays;
  * @Time at 10:28 PM
  */
 public class MedianOfSortedArray {
+
+    public static void main(String[] args) {
+        System.out.println(-1-1);
+    }
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
         int[] mergedArray = new int[nums1.length + nums2.length];
