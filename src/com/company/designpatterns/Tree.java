@@ -1,5 +1,8 @@
 package com.company.designpatterns;
 
+import java.math.BigDecimal;
+import java.util.Locale;
+
 /**
  * @author is Nabeel Tariq Bhatti
  * @created at 3/13/2022
@@ -34,6 +37,11 @@ public abstract  class Tree <E>{
 
 class Main{
     public static void main(String[] args) {
+
+        Product build = new Product.Builder().name("Apple").color("red").price(BigDecimal.valueOf(23)).build();
+
+
+        System.out.println(build);
 
     }
 }
